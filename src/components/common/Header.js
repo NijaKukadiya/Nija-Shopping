@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-// import { Badge } from "../../ui-kit/common-ui-components";
+import { Badge } from "../../ui-kit/common-ui-components";
 import * as routes from "../../lib/constants";
-// import { DashboardFilter } from ".";
+import { DashboardFilter } from ".";
 
-const Header =()=>{
+const Header =({ cartData, handleApplyClick })=>{
     return(
         
         <header>
@@ -26,7 +26,7 @@ const Header =()=>{
         >
             <span className="navbar-toggler-icon" />
         </button>
-        {/* <DashboardFilter handleApplyClick={handleApplyClick} /> */}
+        <DashboardFilter handleApplyClick={handleApplyClick} />
         <div
           className="collapse navbar-collapse justify-content-end"
           id="navbarToggler"
@@ -37,7 +37,7 @@ const Header =()=>{
                 {" "}
                 <span className="nav-link active">
                   {" "}
-                  {/* <Badge count={cartData.cartCount} />{" "} */}
+                  <Badge count={cartData.cartCount} />{" "}
                 </span>{" "}
               </Link>
             </li>
@@ -45,5 +45,9 @@ const Header =()=>{
         </div>
         </header>
     );
+};
+Header.propTypes = {
+  cartData: PropTypes.any,
+  handleApplyClick: PropTypes.func.isRequired
 };
 export default Header;

@@ -36,3 +36,4 @@ const Button = ({
     name: PropTypes.string,
     disabled: PropTypes.bool
   };
+  export default Button;

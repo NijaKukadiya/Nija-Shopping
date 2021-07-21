@@ -9,15 +9,15 @@ class LeftSideBar extends Component{
         return(
             <div>
                 <Route 
-                path={routes.ROOT_ROUTE}
-                exact
-                component={this.handleDashboardFilter}
-                />
+                    path={routes.ROOT_ROUTE}
+                    exact
+                    component={this.handleDashboardFilter}
+                    />
                 <Route
-                path={routes.ITEMS_ROUTE}
-                exact
-                component={this.handleDashboardFilter}
-                />
+                    path={routes.ITEMS_ROUTE}
+                    exact
+                    component={this.handleDashboardFilter}
+                    />
             </div>
         );
     }

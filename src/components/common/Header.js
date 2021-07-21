@@ -9,21 +9,19 @@ const Header =({ cartData, handleApplyClick })=>{
     return(
         
         <header>
-             <h1>header</h1>
             <nav className="fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
-                <span className="navbar-brand"></span>
-                <Link to={"/"}> Acme.com</Link>
-            </nav>
-
+                <span className="navbar-brand">
+                    <Link to={"/"}> Acme.com</Link>
+                </span>
             <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarToggler"
-          aria-controls="navbarToggler"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarToggler"
+              aria-controls="navbarToggler"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
             <span className="navbar-toggler-icon" />
         </button>
         <DashboardFilter handleApplyClick={handleApplyClick} />
@@ -43,6 +41,7 @@ const Header =({ cartData, handleApplyClick })=>{
             </li>
           </ul>
         </div>
+        </nav>
         </header>
     );
 };

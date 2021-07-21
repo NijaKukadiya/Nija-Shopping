@@ -23,52 +23,53 @@ const sortOptions = [
       value: "Popularity"
     }
   ];
-  const handleSelect = () => {};
+  
+const handleSelect = () => {};
 
-  const handleRenderItemList=(
-      items,
-      handleAddToCart,
-      handleRemoveToCart,
-      isCart
-  ) => {
-      return (
-        <div className="testClass">
-        {
-          <div className="form-group" id="productListsort">
-              <Label html for="sort By" value="sort By" />
-              <Select 
-              options={sortOptions}
-              className="form-control"
-              id="productListSortBy"
-              onchange={handleSelect}
-              />
-          </div>
-        }
-        <div classname="row">
-            {items.map(item => {
-                return(
-                    <div className="col-sm-3" key={item.id}>
-                        <div className="card">
-                            <div className="card-body">
-                                <Link to={`${routes.BASE_ITEM_ROUTE}${item.id}`}>
-                                    <Item item={item} />
-                                </Link>
-                                <Button
-                                    type="button"
-                                    className="btn btn-info"
-                                    text={isCart ? "Remove to cart" : "Add to cart"}
-                                    id={item.id}
-                                    onClick={isCart ? handleRemoveToCart : handleAddToCart}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                );  
-            })}
+const handleRenderItemList = (
+  items,
+  handleAddToCart,
+  handleRemoveToCart,
+  isCart
+) => {
+  return (
+    <div className="testClass">
+      {
+        <div className="form-group" id="productListSort">
+          <Label htmlfor="Sort By" value="Sort By" />
+          <Select
+            options={sortOptions}
+            className="form-control"
+            id="productListSortBy"
+            onChange={handleSelect}
+          />
         </div>
-        </div>
-      );
-  }
+      }
+      <div className="row">
+        {items.map(item => {
+          return (
+            <div className="col-sm-3" key={item.id}>
+              <div className="card">
+                <div className="card-body">
+                  <Link to={`${routes.BASE_ITEM_ROUTE}${item.id}`}>
+                    <Item item={item} />
+                  </Link>
+                  <Button
+                    type="button"
+                    className="btn btn-info"
+                    text={isCart ? "Remove to cart" : "Add to cart"}
+                    id={item.id}
+                    onClick={isCart ? handleRemoveToCart : handleAddToCart}
+                  />
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
   const ItemList = ({items,handleAddToCart,handleRemoveToCart,isCart})=>{
       return (
           <div>
@@ -82,7 +83,8 @@ const sortOptions = [
                 {!items && <p> No Data found to display </p>}
             </div>
       );
-  }
+  };
+
   ItemList.propTypes={
       items: PropTypes.any,
       handleAddToCart: PropTypes.func,

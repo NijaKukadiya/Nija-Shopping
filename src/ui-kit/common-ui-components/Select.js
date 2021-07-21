@@ -15,7 +15,6 @@ class Select extends Component {
   render() {
     const { options, disabled, className, id } = this.props;
     const { defaultValue, value } = this.state;
-
     return (
       //eslint-disable-next-line jsx-a11y/no-onchange
       <select

@@ -9,10 +9,8 @@ class DashboardFilter extends Component {
     super(props);
     this.state = {};
   }
-
   render() {
     const { products } = this.props;
-
     return (
       <div className="left-filters">
         <AutosuggestElement

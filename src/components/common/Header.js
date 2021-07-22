@@ -24,12 +24,19 @@ const Header =({ cartData, handleApplyClick })=>{
             >
             <span className="navbar-toggler-icon" />
         </button>
+            
         <DashboardFilter handleApplyClick={handleApplyClick} />
         <div
           className="collapse navbar-collapse justify-content-end"
           id="navbarToggler"
         >
           <ul className="navbar-nav">
+          <span className="navbar-brand">
+            <Link to={routes.REGISTRATION_ROUTE}>Registration</Link>{" "}
+            </span>
+          <span className="navbar-brand">
+            <Link to={routes.LOGIN_ROUTE}>Login</Link>{" "}
+            </span>
             <li className="nav-item">
               <Link to={routes.CARTS_ROUTE}>
                 {" "}

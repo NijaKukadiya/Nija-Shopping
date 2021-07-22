@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import * as routes from "../lib/constants";
 
-import { ItemList, Product } from "../components";
+import { ItemList, LoginForm, RegistrationForm, Product } from "../components";
 
 
 class DashboardRoutes extends Component {
@@ -28,11 +28,30 @@ class DashboardRoutes extends Component {
               path={routes.CARTS_ROUTE}
               component={this.handleCartList}
             />
+            <Route
+                exact
+                path={routes.REGISTRATION_ROUTE}
+                component={this.handleRegistration}
+            />
+            <Route
+                exact
+                path={routes.LOGIN_ROUTE}
+                component={this.handleLogin}
+            />
           </Switch>
         </div>
       );
     }
-  
+    handleLogin = () => {
+      return(
+        < LoginForm />
+      );
+    }
+    handleRegistration = () => {
+      return(
+        <RegistrationForm />
+      );
+    }
     handleItemList = () => {
       const { items, handleAddToCart } = this.props;
       return (
